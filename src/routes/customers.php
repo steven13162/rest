@@ -18,7 +18,7 @@ $app->add(function ($req, $res, $next) {
 
 // Get All Customers
 $app->get('/api/customers', function(Request $request, Response $response){
-    $sql = "SELECT * FROM customers";
+    $sql = "SELECT * FROM NOMBRETABLA";
 
     try{
         // Get DB Object
@@ -29,17 +29,17 @@ $app->get('/api/customers', function(Request $request, Response $response){
         $stmt = $db->query($sql);
         $customers = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
-        echo json_encode($customers);
+        echo json_encode($NOMBRETABLA);
     } catch(PDOException $e){
         echo '{"error": {"text": '.$e->getMessage().'}';
     }
 });
 
 // Get Single Customer
-$app->get('/api/customer/{id}', function(Request $request, Response $response){
+$app->get('/api/NOMBRETABLA/{id}', function(Request $request, Response $response){
     $id = $request->getAttribute('id');
 
-    $sql = "SELECT * FROM customers WHERE id = $id";
+    $sql = "SELECT * FROM NOMBRETABLA WHERE id = $id";
 
     try{
         // Get DB Object
@@ -66,7 +66,7 @@ $app->post('/api/customer/add', function(Request $request, Response $response){
     $city = $request->getParam('city');
     $state = $request->getParam('state');
 
-    $sql = "INSERT INTO customers (first_name,last_name,phone,email,address,city,state) VALUES
+    $sql = "INSERT INTO NOMBRETABLA (first_name,last_name,phone,email,address,city,state) VALUES
     (:first_name,:last_name,:phone,:email,:address,:city,:state)";
 
     try{
@@ -87,7 +87,7 @@ $app->post('/api/customer/add', function(Request $request, Response $response){
 
         $stmt->execute();
 
-        echo '{"notice": {"text": "Customer Added"}';
+        echo '{"notice": {"text": "NOMBRETABLA Added"}';
 
     } catch(PDOException $e){
         echo '{"error": {"text": '.$e->getMessage().'}';
@@ -95,7 +95,7 @@ $app->post('/api/customer/add', function(Request $request, Response $response){
 });
 
 // Update Customer
-$app->put('/api/customer/update/{id}', function(Request $request, Response $response){
+$app->put('/api/NOMBRETABLA/update/{id}', function(Request $request, Response $response){
     $id = $request->getAttribute('id');
     $first_name = $request->getParam('first_name');
     $last_name = $request->getParam('last_name');
@@ -141,10 +141,10 @@ $app->put('/api/customer/update/{id}', function(Request $request, Response $resp
 });
 
 // Delete Customer
-$app->delete('/api/customer/delete/{id}', function(Request $request, Response $response){
+$app->delete('/api/NOMBRETABLA/delete/{id}', function(Request $request, Response $response){
     $id = $request->getAttribute('id');
 
-    $sql = "DELETE FROM customers WHERE id = $id";
+    $sql = "DELETE FROM NOMBRETABLA WHERE id = $id";
 
     try{
         // Get DB Object
@@ -155,7 +155,7 @@ $app->delete('/api/customer/delete/{id}', function(Request $request, Response $r
         $stmt = $db->prepare($sql);
         $stmt->execute();
         $db = null;
-        echo '{"notice": {"text": "Customer Deleted"}';
+        echo '{"notice": {"text": "NOMBRETABLA Deleted"}';
     } catch(PDOException $e){
         echo '{"error": {"text": '.$e->getMessage().'}';
     }
