@@ -27,7 +27,7 @@ $app->get('/api/pruebas', function(Request $request, Response $response){
         $db = $db->connect();
 
         $stmt = $db->query($sql);
-        $customers = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $prueba = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
         echo json_encode($prueba);
     } catch(PDOException $e){
@@ -48,7 +48,7 @@ $app->get('/api/prueba/{id}', function(Request $request, Response $response){
         $db = $db->connect();
 
         $stmt = $db->query($sql);
-        $customer = $stmt->fetch(PDO::FETCH_OBJ);
+        $prueba = $stmt->fetch(PDO::FETCH_OBJ);
         $db = null;
         echo json_encode($prueba);
     } catch(PDOException $e){
