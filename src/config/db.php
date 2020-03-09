@@ -1,10 +1,10 @@
 <?php
     class db{
         // Properties
-        private $dbhost = 'sql12.freesqldatabase.com';
-        private $dbuser = 'sql12326542';
-        private $dbpass = 'Please wait';
-        private $dbname = 'sql12326542';
+        private $dbhost = '127.0.0.1';
+        private $dbuser = '';
+        private $dbpass = '';
+        private $dbname = 'prueba';
 
         // Connect
         public function connect(){
