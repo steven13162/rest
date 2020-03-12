@@ -4,7 +4,7 @@
         private $dbhost = 'remotemysql.com';
         private $dbuser = 'ot7Mr1f1Cg';
         private $dbpass = 'yvTND48KhD';
-        private $dbname = 'prueba';
+        private $dbname = 'ot7Mr1f1Cg';
 
         // Connect
         public function connect(){
