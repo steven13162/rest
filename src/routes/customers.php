@@ -39,7 +39,7 @@ $app->get('/api/pruebas', function(Request $request, Response $response){
 $app->get('/api/prueba/{id}', function(Request $request, Response $response){
     $id = $request->getAttribute('id');
 
-    $sql = "SELECT * FROM prueba WHERE id = $id";
+    $sql = "SELECT * FROM prueba WHERE first_name = $first_name";
 
     try{
         // Get DB Object
