@@ -1,9 +1,9 @@
 <?php
     class db{
         // Properties
-        private $dbhost = '127.0.0.1';
-        private $dbuser = '';
-        private $dbpass = '';
+        private $dbhost = 'remotemysql.com';
+        private $dbuser = 'ot7Mr1f1Cg';
+        private $dbpass = 'yvTND48KhD';
         private $dbname = 'prueba';
 
         // Connect
