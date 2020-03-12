@@ -57,7 +57,7 @@ $app->get('/api/prueba/{id}', function(Request $request, Response $response){
 });
 
 // Add Customer
-$app->post('/api/prueba/add', function(Request $request, Response $response){
+$app->post('/api/customer/add', function(Request $request, Response $response){
     $first_name = $request->getParam('first_name');
     $last_name = $request->getParam('last_name');
     $phone = $request->getParam('phone');
@@ -66,7 +66,7 @@ $app->post('/api/prueba/add', function(Request $request, Response $response){
     $city = $request->getParam('city');
     $state = $request->getParam('state');
 
-    $sql = "INSERT INTO prueba (first_name,last_name,phone,email,address,city,state) VALUES
+    $sql = "INSERT INTO customer (first_name,last_name,phone,email,address,city,state) VALUES
     (:first_name,:last_name,:phone,:email,:address,:city,:state)";
 
     try{
@@ -87,7 +87,7 @@ $app->post('/api/prueba/add', function(Request $request, Response $response){
 
         $stmt->execute();
 
-        echo '{"notice": {"text": "prueba Added"}';
+        echo '{"notice": {"text": "customer Added"}';
 
     } catch(PDOException $e){
         echo '{"error": {"text": '.$e->getMessage().'}';
@@ -95,7 +95,7 @@ $app->post('/api/prueba/add', function(Request $request, Response $response){
 });
 
 // Update Customer
-$app->put('/api/prueba/update/{id}', function(Request $request, Response $response){
+$app->put('/api/customer/update/{id}', function(Request $request, Response $response){
     $id = $request->getAttribute('id');
     $first_name = $request->getParam('first_name');
     $last_name = $request->getParam('last_name');
@@ -105,7 +105,7 @@ $app->put('/api/prueba/update/{id}', function(Request $request, Response $respon
     $city = $request->getParam('city');
     $state = $request->getParam('state');
 
-    $sql = "UPDATE prueba SET
+    $sql = "UPDATE customer SET
 				first_name 	= :first_name,
 				last_name 	= :last_name,
                 phone		= :phone,
@@ -133,7 +133,7 @@ $app->put('/api/prueba/update/{id}', function(Request $request, Response $respon
 
         $stmt->execute();
 
-        echo '{"notice": {"text": "prueba Updated"}';
+        echo '{"notice": {"text": "customer Updated"}';
 
     } catch(PDOException $e){
         echo '{"error": {"text": '.$e->getMessage().'}';
@@ -141,10 +141,10 @@ $app->put('/api/prueba/update/{id}', function(Request $request, Response $respon
 });
 
 // Delete Customer
-$app->delete('/api/prueba/delete/{id}', function(Request $request, Response $response){
+$app->delete('/api/customer/delete/{id}', function(Request $request, Response $response){
     $id = $request->getAttribute('id');
 
-    $sql = "DELETE FROM prueba WHERE id = $id";
+    $sql = "DELETE FROM customer WHERE id = $id";
 
     try{
         // Get DB Object
