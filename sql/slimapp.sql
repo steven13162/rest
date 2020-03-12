@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `customers`
 --
 
-CREATE TABLE `customers` (
+CREATE TABLE `prueba` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `first_name`, `last_name`, `phone`, `email`, `address`, `city`, `state`) VALUES
+INSERT INTO `prueba` (`id`, `first_name`, `last_name`, `phone`, `email`, `address`, `city`, `state`) VALUES
 (2, 'Sam', 'Smith', '333-333-3333', 'ssmith@yahoo.com', '33 Birch Rd', 'Miami', 'FL'),
 (3, 'Brad', 'Traversy', '333-333-3333', 'brad@test.com', '333 South st', 'Portland', 'ME');
 
@@ -50,9 +50,9 @@ INSERT INTO `customers` (`id`, `first_name`, `last_name`, `phone`, `email`, `add
 --
 
 --
--- Indexes for table `customers`
+-- Indexes for table `prueba`
 --
-ALTER TABLE `customers`
+ALTER TABLE `prueba`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -62,7 +62,7 @@ ALTER TABLE `customers`
 --
 -- AUTO_INCREMENT for table `customers`
 --
-ALTER TABLE `customers`
+ALTER TABLE `prueba`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
